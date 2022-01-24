@@ -1,0 +1,19 @@
+POST http://localhost:8080/driver HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"Driver 1",
+    "email": "driver@repo.com"
+}
+
+#########
+
+GET http://localhost:8080/driver HTTP/1.1
+
+########
+
+GET http://localhost:8080/driver/1 HTTP/1.1
+
+#########
+
+GET http://localhost:8080/driver/10 HTTP/1.1
