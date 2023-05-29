@@ -12,7 +12,7 @@ class AppResponseExceptionHandler: ResponseEntityExceptionHandler() {
 
     @ExceptionHandler(value = [ResponseStatusException::class])
     fun handleResponseException(ex: ResponseStatusException, request: WebRequest): ResponseEntity<MessageObj> {
-        val msgObj = MessageObj(code = ex.rawStatusCode, message = ex.localizedMessage)
+        val msgObj = MessageObj(code = ex.getBody().status, message = ex.localizedMessage)
         return ResponseEntity.status(msgObj.code).body(msgObj)
     }
 
